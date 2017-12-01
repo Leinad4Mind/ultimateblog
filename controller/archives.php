@@ -10,6 +10,12 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\config\config;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\template\template;
+use phpbb\user;
+
 /**
  * Class archives
  *
@@ -45,7 +51,14 @@ class archives
 	* @param \phpbb\template\template				$template
 	* @param \phpbb\user							$user
 	*/
-	public function __construct(\phpbb\config\config $config, $func, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(
+		config $config, 
+		$func, 
+		helper $helper, 
+		language $lang, 
+		template $template, 
+		user $user
+	)
 	{
 		$this->config	= $config;
 		$this->func		= $func;

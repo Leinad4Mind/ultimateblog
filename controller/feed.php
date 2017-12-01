@@ -12,6 +12,14 @@ namespace mrgoldy\ultimateblog\controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\controller\helper;
+use phpbb\db\driver\driver_interface;
+use phpbb\feed\helper;
+use phpbb\symfony_request;
+use phpbb\template\twig\environment;
+use phpbb\user;
 
 /**
  * Class feed
@@ -79,7 +87,23 @@ class feed
 	 * @param string								$ub_ratings_table		Ultimate Blog ratings table
 	 * @access public
 	 */
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\controller\helper $controller_helper, \phpbb\db\driver\driver_interface $db, \phpbb\feed\helper $feed_helper, \phpbb\symfony_request $request, \phpbb\template\twig\environment $twig, \phpbb\user $user, $php_ext, $ub_blogs_table, $ub_categories_table, $ub_blog_category_table, $ub_comments_table, $ub_edits_table, $ub_ratings_table)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		helper $controller_helper, 
+		driver_interface $db, 
+		helper $feed_helper, 
+		symfony_request $request, 
+		environment $twig, 
+		user $user, 
+		$php_ext, 
+		$ub_blogs_table, 
+		$ub_categories_table, 
+		$ub_blog_category_table, 
+		$ub_comments_table, 
+		$ub_edits_table, 
+		$ub_ratings_table
+	)
 	{
 		$this->auth						= $auth;
 		$this->config					= $config;

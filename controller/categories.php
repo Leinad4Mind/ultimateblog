@@ -10,6 +10,14 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\config\config;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\pagination;
+use phpbb\path_helper;
+use phpbb\textformatter\s9e\renderer;
+use phpbb\template\template;
+
 /**
  * Class categories
  *
@@ -55,7 +63,16 @@ class categories
 	 * @internal param $ \phpbb\textformatter/s9e/renderer        $renderer        Renderer object
 	 * @access	public
 	 */
-	public function __construct(\phpbb\config\config $config, $func, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\pagination $pagination, \phpbb\path_helper $path_helper, \phpbb\textformatter\s9e\renderer $renderer, \phpbb\template\template $template)
+	public function __construct(
+		config $config, 
+		$func, 
+		helper $helper, 
+		language $lang, 
+		pagination $pagination, 
+		path_helper $path_helper, 
+		renderer $renderer, 
+		template $template
+	)
 	{
 		$this->config		= $config;
 		$this->func			= $func;

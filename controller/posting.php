@@ -12,6 +12,22 @@ namespace mrgoldy\ultimateblog\controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\files\factory;
+use phpbb\filesystem\filesystem;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\log\log;
+use phpbb\notification\manager;
+use phpbb\pagination;
+use phpbb\textformatter\s9e\parser;
+use phpbb\path_helper;
+use phpbb\textformatter\s9e\renderer;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+use phpbb\textformatter\s9e\utils;
 
 /**
  * Class posting
@@ -101,7 +117,27 @@ class posting
 	 * @internal param \phpbb\files\factory $files Files factory
 	 * @access	public
 	 */
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\files\factory $files_factory, \phpbb\filesystem\filesystem $filesystem, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\log\log $log, \phpbb\notification\manager $notification_manager, \phpbb\pagination $pagination, \phpbb\textformatter\s9e\parser $parser, \phpbb\path_helper $path_helper, \phpbb\textformatter\s9e\renderer $renderer, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\textformatter\s9e\utils $utils, $php_ext, $phpbb_root_path, $func)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		factory $files_factory, 
+		filesystem $filesystem, 
+		helper $helper, 
+		language $lang, 
+		log $log, 
+		manager $notification_manager, 
+		pagination $pagination, 
+		parser $parser, 
+		path_helper $path_helper, 
+		renderer $renderer, 
+		request $request, 
+		template $template, 
+		user $user, 
+		utils $utils, 
+		$php_ext, 
+		$phpbb_root_path, 
+		$func
+	)
 	{
 		$this->auth					= $auth;
 		$this->config				= $config;

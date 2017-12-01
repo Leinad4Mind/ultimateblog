@@ -10,6 +10,16 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\textformatter\s9e\renderer;
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\path_helper;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+
 /**
  * Class blog
  *
@@ -46,7 +56,20 @@ class blog
 	 * @param                                      $php_ext
 	 * @param                                      $phpbb_root_path
 	 */
-	public function __construct(\phpbb\textformatter\s9e\renderer $renderer, \phpbb\auth\auth $auth, \phpbb\config\config $config, $func, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\path_helper $path_helper, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, $php_ext, $phpbb_root_path)
+	public function __construct(
+		renderer $renderer, 
+		auth $auth, 
+		config $config, 
+		$func, 
+		helper $helper, 
+		language $lang, 
+		path_helper $path_helper, 
+		request $request, 
+		template $template, 
+		user $user, 
+		$php_ext, 
+		$phpbb_root_path
+	)
 	{
 		$this->renderer		= $renderer;
 		$this->auth			= $auth;

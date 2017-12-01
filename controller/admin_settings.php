@@ -10,6 +10,16 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\config\config;
+use phpbb\config\db_text;
+use phpbb\db\driver\driver_interface;
+use phpbb\filesystem\filesystem;
+use phpbb\language\language;
+use phpbb\log\log;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+
 /**
  * Class admin_settings
  *
@@ -72,7 +82,20 @@ class admin_settings
 	 * @param                                   $ub_categories_table
 	 * @param                                   $ub_index_table
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\db\driver\driver_interface $db, \phpbb\filesystem\filesystem $filesystem, \phpbb\language\language $lang, \phpbb\log\log $log, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, $phpbb_root_path, $ub_categories_table, $ub_index_table)
+	public function __construct(
+		config $config, 
+		db_text $config_text, 
+		driver_interface $db, 
+		filesystem $filesystem, 
+		language $lang, 
+		log $log, 
+		request $request, 
+		template $template, 
+		user $user, 
+		$phpbb_root_path, 
+		$ub_categories_table, 
+		$ub_index_table
+	)
 	{
 		$this->config		= $config;
 		$this->config_text	= $config_text;

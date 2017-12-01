@@ -10,6 +10,20 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\config\config;
+use phpbb\db\driver\driver_interface;
+use phpbb\filesystem\filesystem;
+use phpbb\files\factory;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\log\log;
+use phpbb\textformatter\s9e\parser;
+use phpbb\textformatter\s9e\renderer;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+use phpbb\textformatter\s9e\utils;
+
 /**
  * Class admin_categories
  *
@@ -93,7 +107,25 @@ class admin_categories
 	 * @param                                   $ub_categories_table
 	 * @param                                   $ub_blog_category_table
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\filesystem\filesystem $filesystem, \phpbb\files\factory $files_factory, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\log\log $log, \phpbb\textformatter\s9e\parser $parser, \phpbb\textformatter\s9e\renderer $renderer, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\textformatter\s9e\utils $utils, $phpbb_root_path, $ub_blogs_table, $ub_categories_table, $ub_blog_category_table)
+	public function __construct(
+		config $config, 
+		driver_interface $db, 
+		filesystem $filesystem, 
+		factory $files_factory, 
+		helper $helper, 
+		language $lang, 
+		log $log, 
+		parser $parser, 
+		renderer $renderer, 
+		request $request, 
+		template $template, 
+		user $user, 
+		utils $utils, 
+		$phpbb_root_path, 
+		$ub_blogs_table, 
+		$ub_categories_table, 
+		$ub_blog_category_table
+	)
 	{
 		$this->config					= $config;
 		$this->db						= $db;

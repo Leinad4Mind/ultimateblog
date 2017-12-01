@@ -10,6 +10,19 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\db\driver\driver_interface;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\log\log;
+use phpbb\notification\manager;
+use phpbb\pagination;
+use phpbb\textformatter\s9e\renderer;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+
 /**
  * Class mcp
  *
@@ -94,7 +107,26 @@ class mcp
 	* @param string									$ub_reports_table		Ultimate Blog reports table
 	* @access public
 	*/
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, $func, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\log\log $log, \phpbb\notification\manager $notification_manager, \phpbb\pagination $pagination, \phpbb\textformatter\s9e\renderer $renderer, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, $php_ext, $phpbb_root_path, $ub_blogs_table, $ub_comments_table, $ub_reports_table)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		driver_interface $db, 
+		$func, 
+		helper $helper, 
+		language $lang, 
+		log $log, 
+		manager $notification_manager, 
+		pagination $pagination, 
+		renderer $renderer, 
+		request $request, 
+		template $template, 
+		user $user, 
+		$php_ext, 
+		$phpbb_root_path, 
+		$ub_blogs_table, 
+		$ub_comments_table, 
+		$ub_reports_table
+	)
 	{
 		$this->auth					= $auth;
 		$this->config				= $config;

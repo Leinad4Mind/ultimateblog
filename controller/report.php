@@ -1,16 +1,26 @@
 <?php
 /**
-*
-* Ultimate Blog. An extension for the phpBB Forum Software package.
-*
-* @copyright (c) 2017, Mr. Goldy
-* @license GNU General Public License, version 2 (GPL-2.0)
-*
-*/
+ *
+ * Ultimate Blog. An extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2017, Mr. Goldy
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace mrgoldy\ultimateblog\controller;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\db\driver\driver_interface;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\log\log;
+use phpbb\request\request_interface;
+use phpbb\template\template;
+use phpbb\user;
+use phpbb\report\report_reason_list_provider;
 
 /**
 * Ultimate Blog Report controller
@@ -74,7 +84,21 @@ class report
 	 * @internal param \report\reason\report_reason_list_provider $uiprovider Report reason list provider
 	 * @access	public
 	 */
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\log\log $log, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\report\report_reason_list_provider $ui_provider, $ub_blogs_table, $ub_comments_table, $ub_reports_table)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		driver_interface $db, 
+		helper $helper, 
+		language $lang, 
+		log $log, 
+		request_interface $request, 
+		template $template, 
+		user $user, 
+		report_reason_list_provider $ui_provider, 
+		$ub_blogs_table, 
+		$ub_comments_table, 
+		$ub_reports_table
+	)
 	{
 		$this->auth			= $auth;
 		$this->config		= $config;

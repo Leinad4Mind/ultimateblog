@@ -10,6 +10,18 @@
 
 namespace mrgoldy\ultimateblog\controller;
 
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\pagination;
+use phpbb\path_helper;
+use phpbb\textformatter\s9e\renderer;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
+use phpbb\textformatter\s9e\utils;
+
 /**
  * Class bloglist
  *
@@ -70,7 +82,20 @@ class bloglist
 	* @param \phpbb\textformatter\s9e\utils			$utils			Utils object
 	* @access public
 	*/
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, $func, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\pagination $pagination, \phpbb\path_helper $path_helper, \phpbb\textformatter\s9e\renderer $renderer, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\textformatter\s9e\utils $utils)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		$func, 
+		helper $helper, 
+		language $lang, 
+		pagination $pagination, 
+		path_helper $path_helper, 
+		renderer $renderer, 
+		request $request, 
+		template $template, 
+		user $user, 
+		utils $utils
+	)
 	{
 		$this->auth			= $auth;
 		$this->config		= $config;

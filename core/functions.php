@@ -1,14 +1,20 @@
 <?php
 /**
-*
-* Ultimate Blog. An extension for the phpBB Forum Software package.
-*
-* @copyright (c) 2017, Mr. Goldy
-* @license GNU General Public License, version 2 (GPL-2.0)
-*
-*/
+ *
+ * Ultimate Blog. An extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2017, Mr. Goldy
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace mrgoldy\ultimateblog\core;
+
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\db\driver\driver_interface;
+use phpbb\template\template;
+use phpbb\user;
 
 /**
  * Class functions
@@ -78,7 +84,22 @@ class functions
 	* @param string								$ub_ratings_table
 	*/
 
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\user $user, $php_ext, $phpbb_root_path, $ub_blogs_table, $ub_categories_table, $ub_blog_category_table, $ub_comments_table, $ub_edits_table, $ub_index_table, $ub_ratings_table)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		driver_interface $db, 
+		template $template, 
+		user $user, 
+		$php_ext, 
+		$phpbb_root_path, 
+		$ub_blogs_table, 
+		$ub_categories_table, 
+		$ub_blog_category_table, 
+		$ub_comments_table, 
+		$ub_edits_table, 
+		$ub_index_table, 
+		$ub_ratings_table
+	)
 	{
 		$this->auth		= $auth;
 		$this->config	= $config;

@@ -12,6 +12,15 @@ namespace mrgoldy\ultimateblog\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+use phpbb\auth\auth;
+use phpbb\config\config;
+use phpbb\config\db_text;
+use phpbb\db\driver\driver_interface;
+use phpbb\controller\helper;
+use phpbb\language\language;
+use phpbb\template\template;
+use phpbb\user;
+
 /**
  * Ultimate Blog Event listener.
  */
@@ -78,7 +87,22 @@ class main_listener implements EventSubscriberInterface
 	 * @param                                   $ub_reports_table
 	 * @internal param \phpbb\language\language $language Language object
 	 */
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\db\driver\driver_interface $db, \phpbb\controller\helper $helper, \phpbb\language\language $lang, \phpbb\template\template $template, \phpbb\user $user, $php_ext, $phpbb_root_path, $ub_blogs_table, $ub_categories_table, $ub_comments_table, $ub_reports_table)
+	public function __construct(
+		auth $auth, 
+		config $config, 
+		db_text $config_text, 
+		driver_interface $db, 
+		helper $helper, 
+		language $lang, 
+		template $template, 
+		user $user, 
+		$php_ext, 
+		$phpbb_root_path, 
+		$ub_blogs_table, 
+		$ub_categories_table, 
+		$ub_comments_table, 
+		$ub_reports_table
+	)
 	{
 		$this->auth			= $auth;
 		$this->config		= $config;
