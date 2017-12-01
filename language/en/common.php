@@ -29,12 +29,15 @@ $lang = array_merge($lang, array(
 	'BLOG_ADD'				=> 'Add blog',
 	'BLOG_ADDED'			=> 'Your blog (“<strong>%1$s</strong>”) has been successfully added.<br><br><strong><a href="%2$s">« Click here to view your blog</a></strong>',
 	'BLOG_ARCHIVE'			=> 'Archive',
-	'BLOG_ARCHIVE_DESCRIPTION'	=> 'A list of months, grouped by year, in which blogs were posted. Click on a month to view all blogs for that specific period.',
+	'BLOG_ARCHIVE_DESCRIPTION'		=> 'A list of months, grouped by year, in which blogs were posted. Click on a month to view all blogs for that specific period.',
 	'BLOG_ARCHIVE_DESCRIPTION_DATE'	=> 'All blogs posted in the month of %1$s %2$s.', // %1$s is month (October), %2$s is year (2049)
-	'BLOG_AUTHOR'			=> 'author',
+	'BLOG_AUTHOR'					=> 'author',
 
+	'BLOG_BEST_RATING'				=> 'Blog with best rating',
 	'BLOG_BLOG_CATEGORY'			=> 'Blog category',
+	'BLOG_BLOG_PER_DAY'				=> 'Blogs per day',
 
+	'BLOG_CATEGORY'					=> 'Category',
 	'BLOG_CATEGORIES'				=> 'Categories',
 	'BLOG_CATEGORIES_DESCRIPTION'	=> 'A list of categories in which blogs are posted. Click on a category to view all blogs for that specific blogs.',
 	'BLOG_CATEGORIES_GO'			=> 'Go to category',
@@ -48,6 +51,7 @@ $lang = array_merge($lang, array(
 	'BLOG_COMMENTS_DELETE_REPLIES'	=> 'This will also delete all replies made to this comment.',
 	'BLOG_COMMENTS_EDIT'			=> 'Edit this comment',
 	'BLOG_COMMENTS_LINK'			=> 'Link to this comment',
+	'BLOG_COMMENTS_PER_DAY'			=> 'Comments per day',
 	'BLOG_COMMENTS_POST'			=> 'Post a comment',
 	'BLOG_COMMENTS_REPLY'			=> 'Reply to this comment',
 	'BLOG_COMMENTS_REPORT'			=> 'Report this comment',
@@ -103,7 +107,14 @@ $lang = array_merge($lang, array(
 	'BLOG_LOCK_COMMENTS'		=> 'Prevent commenting',
 	'BLOG_LOCK_RATING'			=> 'Prevent rating',
 
+	'BLOG_MOST_COMMENTS'		=> 'Blog with most comments',
+	'BLOG_MOST_VIEWS'			=> 'Blog with most views',
+
 	'BLOG_NEW'					=> 'New blogs',
+	'BLOG_NUMBER_BLOGS'			=> 'Number of blogs',
+	'BLOG_NUMBER_CATEGORIES'	=> 'Number of categories',
+	'BLOG_NUMBER_COMMENTS'		=> 'Number of comments',
+	'BLOG_NUMBER_BLOGVIEWS'		=> 'Number of blog views',
 
 	'BLOG_PERM_ADD_CAN'				=> 'You <strong>can</strong> post new blogs',
 	'BLOG_PERM_ADD_NOT'				=> 'You <strong>cannot</strong> post new blogs',
@@ -134,6 +145,7 @@ $lang = array_merge($lang, array(
 		1	=> '%d rating',
 		2	=> '%d ratings',
 	),
+	'BLOG_REQUIRED_RATINGS'			=> 'Required ratings',
 	'BLOG_READ_FULL'				=> 'Read the full blog',
 	'BLOG_REPORT_BLOG'				=> 'Report blog',
 	'BLOG_REPORT_BLOG_EXPLAIN'		=> 'Use this form to report the selected blog entry. Reporting should generally be used only if the blog breaks forum and/or blog rules.',
@@ -141,14 +153,23 @@ $lang = array_merge($lang, array(
 	'BLOG_REPORT_COMMENT_EXPLAIN'	=> 'Use this form to report the selected comment entry. Reporting should generally be used only if the comment breaks forum and/or blog rules.',
 	'BLOG_REPORTED'					=> 'This blog has been reported.',
 
+	'BLOG_SHOW_AMOUNT'			=> 'Show amount',
+	'BLOG_SHOW_MOSTVIEWS'		=> 'Show blogs with the most views',
+	'BLOG_START_DATE'			=> 'Start date',
+
 	'BLOG_TITLE'				=> 'Blog title',
 	'BLOGS_TOTAL'				=> 'Total blogs',
 	'BLOGS_TOTAL_SEARCH'		=> 'Search users’s blogs',
 
 	'BLOG_UNAPPROVED'			=> 'Unapproved',
+	'BLOG_UPTIME'				=> 'Uptime',
+	'BLOG_USER_MOST_BLOGS'		=> 'User with most blogs',
+	'BLOG_USER_MOST_COMMENTS'	=> 'User with most comments',
 
-	'BLOG_VIEW_PERMISSIONS'	=> 'View your permissions',
-	'BLOG_VIEWS'			=> 'Views',
+	'BLOG_VIEW_PERMISSIONS'		=> 'View your permissions',
+	'BLOG_VIEWS'				=> 'Views',
+
+	'BLOG_WORST_RATING'			=> 'Blog with worst rating',
 
 	'UB_NOTIFICATION_BLOG_DELETED'		=> '<strong>Blog deleted</strong> by %1$s:<br>"%2$s"', // 1: Deleter name | 2: Blog title
 	'UB_NOTIFICATION_BLOG_EDITED'		=> '<strong>Blog edited</strong> by %1$s:<br>"%2$s"', // 1: Editor name | 2: Blog title
